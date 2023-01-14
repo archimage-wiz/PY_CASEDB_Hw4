@@ -69,7 +69,7 @@ WHERE cnt2 = (
         GROUP BY t.album_id
     ) as tmp
 )
-GROUP BY a.name;
+GROUP BY a.name, tmp2.album_id;
 
 SELECT t.album_id, a.name, count(*) as cnt2 FROM tracks as t
 JOIN albums as a ON a.album_id = t.album_id
